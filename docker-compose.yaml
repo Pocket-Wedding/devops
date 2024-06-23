@@ -1,8 +1,8 @@
 networks:
   pocket:
     driver: 'bridge'
-services:
 
+services:
   postgres:
     image: 'postgres:latest'
     container_name: 'postgres'
@@ -59,7 +59,7 @@ services:
     volumes:
       - ./nginx-proxy-manager/data:/data
       - ./nginx-proxy-manager/letsencrypt:/etc/letsencrypt
-    restart: always
+    restart: unless-stopped
     networks:
       - pocket
 
@@ -71,6 +71,7 @@ services:
       MYSQL_DATABASE: 'npm'
       MYSQL_USER: 'npm'
       MYSQL_PASSWORD: 'npm'
+      MYSQL_ROOT_HOST: '%'
     ports:
       - '3306:3306'
     restart: 'on-failure'
