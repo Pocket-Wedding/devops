@@ -5,7 +5,7 @@ services:
 
   postgres:
     image: 'postgres:latest'
-    container_name: 'db'
+    container_name: 'postgres'
     environment:
       - 'POSTGRES_DB=pocket'
       - 'POSTGRES_PASSWORD=postgres'
