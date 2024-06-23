@@ -64,7 +64,7 @@ services:
       - pocket
 
   db:
-    image: 'mysql:latest'
+    image: 'mysql:8.3.0'
     container_name: 'db'
     environment:
       MYSQL_ROOT_PASSWORD: 'npm'
