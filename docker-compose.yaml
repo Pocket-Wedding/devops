@@ -43,7 +43,7 @@ services:
     networks:
       - 'pocket'
   
-  nginx-proxy-manager:
+  npm:
     image: 'jc21/nginx-proxy-manager:latest'
     container_name: 'npm'
     ports:
@@ -64,7 +64,7 @@ services:
       - pocket
 
   db:
-    image: 'mysql:8.3.0'
+    image: 'mysql:8.3'
     container_name: 'db'
     environment:
       MYSQL_ROOT_PASSWORD: 'npm'
